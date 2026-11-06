@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate - Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>📚 StudyMate</h1>
+    <nav>
+      <button data-page="dashboard" class="nav-btn active">Dashboard</button>
+      <button data-page="analytics" class="nav-btn">Analytics</button>
+      <button data-page="profile" class="nav-btn">My Profile</button>
+      <button id="themeBtn">🌙 Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="page">
+      <h2>Welcome to StudyMate 👋</h2>
+      <p>Plan your study tasks and track your progress.</p>
+
+      <div class="stats">
+        <div class="card"><h3>Total Tasks</h3><p id="total">0</p></div>
+        <div class="card"><h3>Pending</h3><p id="pending">0</p></div>
+        <div class="card"><h3>Completed</h3><p id="completed">0</p></div>
+      </div>
+
+      <div class="panel">
+        <h2>Add New Task</h2>
+        <form id="taskForm">
+          <input id="taskTitle" placeholder="Task name" required>
+          <input id="subject" placeholder="Subject" required>
+          <input id="dueDate" type="date" required>
+          <select id="priority">
+            <option value="Low">Low Priority</option>
+            <option value="Medium" selected>Medium Priority</option>
+            <option value="High">High Priority</option>
+          </select>
+          <button type="submit">+ Add Task</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>My Tasks</h2>
+        <input id="search" placeholder="Search tasks...">
+        <select id="filter">
+          <option value="All">All Tasks</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <div id="taskList"></div>
+      </div>
+
+      <div class="panel">
+        <h2>⏱️ Focus Timer</h2>
+        <p id="timer">25:00</p>
+        <button id="startTimer">Start</button>
+        <button id="pauseTimer">Pause</button>
+        <button id="resetTimer">Reset</button>
+      </div>
+    </section>
+
+    <section id="analytics" class="page hidden">
+  <h2>📊 My Analytics</h2>
+
+  <div class="card">
+    <h3>Task Completion Rate</h3>
+    <p id="rate">0%</p>
+    <progress id="progress" value="0" max="100"></progress>
+  </div>
+
+  <div class="panel">
+    <h3>📊 Tasks by Subject - Bar Graph</h3>
+    <canvas id="barGraph"></canvas>
+  </div>
+
+  <div class="panel">
+    <h3>🥧 Completed vs Pending - Pie Graph</h3>
+    <canvas id="pieGraph"></canvas>
+  </div>
+
+  <div class="panel">
+    <h3>📚 Tasks by Subject</h3>
+    <div id="subjectStats"></div>
+  </div>
+</section>
+
+    <section id="profile" class="page hidden">
+      <h2>👤 My Profile</h2>
+      <div class="panel">
+        <label>Your Name</label>
+        <input id="profileName" placeholder="Enter your name">
+        <label>College / Course</label>
+        <input id="college" placeholder="Enter college or course">
+        <button id="saveProfile">Save Profile</button>
+        <p id="profileMessage"></p>
+      </div>
+      <div class="panel">
+        <h3>About StudyMate</h3>
+        <p>StudyMate helps students organise tasks, manage study time and monitor progress.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>StudyMate © 2026 | Student Project</footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
